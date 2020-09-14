@@ -11,6 +11,7 @@ RUN apt-get update && \
     ./gradlew clean build -x test
 
 FROM adoptopenjdk:8-jre-hotspot-bionic
+LABEL maintainer="dmijic@acm.org"
 COPY --from=builder /voldemort .
 EXPOSE 6666 6667 8081
 
